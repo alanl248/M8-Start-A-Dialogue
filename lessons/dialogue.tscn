@@ -95,10 +95,6 @@ text = "Test button"
 layout_mode = 2
 text = "Test button"
 
-[node name="Button3" type="Button" parent="VBoxContainer/ActionButtonVBoxContainer"]
-layout_mode = 2
-text = "Test button"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("7_1fga6")
