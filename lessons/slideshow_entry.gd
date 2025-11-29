@@ -1,5 +1,5 @@
 class_name SlideShowEntry extends Resource
 
-@export var expression := preload("res://assets/emotion_regular.png")
-@export var characters:= preload("res://assets/sophia.png")
-@export_multiline var text := ""
+@export var expression: Texture = null
+@export var character: Texture = null
+@export var text := ""

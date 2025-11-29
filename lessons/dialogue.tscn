@@ -1,12 +1,78 @@
-[gd_scene load_steps=9 format=3 uid="uid://chprvwfixox2y"]
+[gd_scene load_steps=21 format=3 uid="uid://chprvwfixox2y"]
 
 [ext_resource type="Theme" uid="uid://cshg3sgf0xxq" path="res://assets/main_theme.tres" id="1_nggfo"]
 [ext_resource type="Script" uid="uid://c673ndsi3esbr" path="res://lessons/dialogue.gd" id="2_n1q1t"]
 [ext_resource type="Shader" uid="uid://cs15e2hgd2lan" path="res://assets/sliding_background.gdshader" id="3_3nfwl"]
+[ext_resource type="Script" uid="uid://dei5f1ruqnct7" path="res://lessons/dialogue_item.gd" id="3_xlxck"]
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="4_xuy0d"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="5_g5y1a"]
+[ext_resource type="Script" uid="uid://itdxxii7hrfw" path="res://lessons/dialogue_choice.gd" id="5_ujubm"]
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="6_bayqr"]
 [ext_resource type="AudioStream" uid="uid://chgko4hmxwxu5" path="res://assets/talking_synth.ogg" id="7_1fga6"]
+[ext_resource type="Texture2D" uid="uid://dchimpdsnda13" path="res://assets/emotion_happy.png" id="7_ujubm"]
+
+[sub_resource type="Resource" id="Resource_rjbgl"]
+script = ExtResource("5_ujubm")
+text = "YES!"
+target_line_idx = 1
+metadata/_custom_type_script = "uid://itdxxii7hrfw"
+
+[sub_resource type="Resource" id="Resource_gkm7m"]
+script = ExtResource("5_ujubm")
+text = "NO :("
+target_line_idx = 2
+is_quit = true
+metadata/_custom_type_script = "uid://itdxxii7hrfw"
+
+[sub_resource type="Resource" id="Resource_1m3r0"]
+script = ExtResource("3_xlxck")
+choices = Array[ExtResource("5_ujubm")]([SubResource("Resource_rjbgl"), SubResource("Resource_gkm7m")])
+expression = ExtResource("6_bayqr")
+character = ExtResource("5_g5y1a")
+text = "Hello do you like Godot?"
+metadata/_custom_type_script = "uid://dei5f1ruqnct7"
+
+[sub_resource type="Resource" id="Resource_5rpy8"]
+script = ExtResource("5_ujubm")
+text = "NO! I hate the cream on it!"
+target_line_idx = 1
+metadata/_custom_type_script = "uid://itdxxii7hrfw"
+
+[sub_resource type="Resource" id="Resource_ifs2s"]
+script = ExtResource("5_ujubm")
+text = "Ummm  sure"
+target_line_idx = 2
+metadata/_custom_type_script = "uid://itdxxii7hrfw"
+
+[sub_resource type="Resource" id="Resource_1f3kq"]
+script = ExtResource("3_xlxck")
+choices = Array[ExtResource("5_ujubm")]([SubResource("Resource_5rpy8"), SubResource("Resource_ifs2s")])
+expression = ExtResource("7_ujubm")
+character = ExtResource("5_g5y1a")
+text = "Great! Would you like some cupcakes?"
+metadata/_custom_type_script = "uid://dei5f1ruqnct7"
+
+[sub_resource type="Resource" id="Resource_j0ech"]
+script = ExtResource("5_ujubm")
+text = "Nah ima do my own thang"
+target_line_idx = 1
+is_quit = true
+metadata/_custom_type_script = "uid://itdxxii7hrfw"
+
+[sub_resource type="Resource" id="Resource_6j24j"]
+script = ExtResource("5_ujubm")
+text = "fasho I come right now"
+target_line_idx = 2
+is_quit = true
+metadata/_custom_type_script = "uid://itdxxii7hrfw"
+
+[sub_resource type="Resource" id="Resource_m4u2h"]
+script = ExtResource("3_xlxck")
+choices = Array[ExtResource("5_ujubm")]([SubResource("Resource_j0ech"), SubResource("Resource_6j24j")])
+expression = ExtResource("6_bayqr")
+character = ExtResource("5_g5y1a")
+text = "Come on down to my house :)"
+metadata/_custom_type_script = "uid://dei5f1ruqnct7"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_efgpg"]
 shader = ExtResource("3_3nfwl")
@@ -26,6 +92,7 @@ grow_vertical = 2
 size_flags_vertical = 2
 theme = ExtResource("1_nggfo")
 script = ExtResource("2_n1q1t")
+dialogue_items = Array[ExtResource("3_xlxck")]([SubResource("Resource_1m3r0"), SubResource("Resource_1f3kq"), SubResource("Resource_m4u2h")])
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_efgpg")
