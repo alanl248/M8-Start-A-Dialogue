@@ -1,3 +1,5 @@
+@tool 
+@icon("res://assets/dialogue_item_icon.svg")
 extends Control
 
 @export var dialogue_items: Array[DialogueItem] = []
@@ -85,3 +87,17 @@ func slide_in() -> void:
 	slide_tween.tween_property(body, "position:x", 0, 0.3)
 	body.modulate.a = 0
 	slide_tween.parallel().tween_property(body, "modulate:a", 1, 0.2)
+
+func _get_configuration_warnings() -> PackedStringArray:
+	if dialogue_items.is_empty():
+		return ["You need at least one dialogue item for the dialogue system to work."]
+	return []
+
+## Setter for the [param dialogue_items] property. Ensures the dialogue items array
+## never has an empty element.
+func set_dialogue_items(new_dialog_items: Array[DialogueItem]) -> void:
+	for index in new_dialog_items.size():
+		if new_dialog_items[index] == null:
+			new_dialog_items[index] = DialogueItem.new()
+	dialogue_items = new_dialog_items
+	update_configuration_warnings()

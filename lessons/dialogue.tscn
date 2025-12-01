@@ -27,8 +27,6 @@ metadata/_custom_type_script = "uid://itdxxii7hrfw"
 [sub_resource type="Resource" id="Resource_1m3r0"]
 script = ExtResource("3_xlxck")
 choices = Array[ExtResource("5_ujubm")]([SubResource("Resource_rjbgl"), SubResource("Resource_gkm7m")])
-expression = ExtResource("6_bayqr")
-character = ExtResource("5_g5y1a")
 text = "Hello do you like Godot?"
 metadata/_custom_type_script = "uid://dei5f1ruqnct7"
 
@@ -48,7 +46,6 @@ metadata/_custom_type_script = "uid://itdxxii7hrfw"
 script = ExtResource("3_xlxck")
 choices = Array[ExtResource("5_ujubm")]([SubResource("Resource_5rpy8"), SubResource("Resource_ifs2s")])
 expression = ExtResource("7_ujubm")
-character = ExtResource("5_g5y1a")
 text = "Great! Would you like some cupcakes?"
 metadata/_custom_type_script = "uid://dei5f1ruqnct7"
 
@@ -69,8 +66,6 @@ metadata/_custom_type_script = "uid://itdxxii7hrfw"
 [sub_resource type="Resource" id="Resource_m4u2h"]
 script = ExtResource("3_xlxck")
 choices = Array[ExtResource("5_ujubm")]([SubResource("Resource_j0ech"), SubResource("Resource_6j24j")])
-expression = ExtResource("6_bayqr")
-character = ExtResource("5_g5y1a")
 text = "Come on down to my house :)"
 metadata/_custom_type_script = "uid://dei5f1ruqnct7"
 
@@ -90,6 +85,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
 theme = ExtResource("1_nggfo")
 script = ExtResource("2_n1q1t")
 dialogue_items = Array[ExtResource("3_xlxck")]([SubResource("Resource_1m3r0"), SubResource("Resource_1f3kq"), SubResource("Resource_m4u2h")])
